@@ -1,5 +1,12 @@
 <?php
-
+  include 'NewsDB.class.php';
+  $news = new NewsDB();
+  $errMsg = "";
+  
+  if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
+  {
+    include 'save_news.inc.php';
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +17,9 @@
 <body>
   <h1>Последние новости</h1>
   <?php
-
+    if($errMsg!=""){
+      echo $errMsg;
+    }
   ?>
   <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
     Заголовок новости:<br />
