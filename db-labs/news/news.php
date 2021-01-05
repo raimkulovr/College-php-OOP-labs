@@ -40,6 +40,8 @@
 </form>
 <?php
 
+include 'get_news.inc.php';
+echo "</div>"
 ?>
 </body>
 </html>

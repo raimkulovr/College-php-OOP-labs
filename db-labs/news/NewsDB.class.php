@@ -41,6 +41,10 @@
         }
 
         function getNews(){
+            $sql = "SELECT msgs.id as id, title, category.name as category, description, source, 
+                datetime FROM msgs, category WHERE category.id = msgs.category ORDER BY msgs.id DESC";
+            $data = $this->_db->query($sql);
+            return($data->fetchAll());
 
         }
         function showNews($id){
